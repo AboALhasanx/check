@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>🔐 التحقق من البرنامج</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f0f0f0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .container {
+      background-color: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      text-align: center;
+      max-width: 400px;
+      width: 90%;
+    }
+    h2 {
+      margin-bottom: 10px;
+    }
+    input[type="password"] {
+      padding: 10px;
+      width: 100%;
+      margin: 15px 0;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    button {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2 id="programTitle">🔐 التحقق</h2>
+    <input type="password" id="passwordInput" placeholder="كلمة المرور" />
+    <button onclick="checkPassword()">تحقق</button>
+    <p id="errorMsg" class="error"></p>
+    <p style="margin-top: 15px;">
+      لا تعرف كلمة المرور؟ <br />
+      <a href="https://t.me/ab0alhasan_bot" target="_blank" style="color: #007bff;">تواصل معنا عبر البوت</a>
+    </p>
+  </div>
+
+  <script>
+    const apps = {
+  matlab: {
+    name: "Matlab",
+    password: atob("bWF0bGFiMjAyNCE="),
+    link: atob("aHR0cHM6Ly9tZWdhLm56L2ZpbGUvNlVCaUdSemEjS1NtenloY3lzRUFYaEYwbU04RlFiZG4wWlJONnJzMXlQX29jYXJNeERDaw==")
+  },
+  vs2010: {
+    name: "Visual Studio 2010",
+    password: atob("dnMyMDEwa2V5IQ=="),
+    link: atob("aHR0cHM6Ly9tZWdhLm56L2ZpbGUvT1VoMXlDU0kjSld6M3RlSUNJMjF5NS1lTnBoTFBpdnJ4STljVGppb3pyWWhJQ3M5NXlRTQ==")
+  },
+  ulead: {
+    name: "Ulead VideoStudio",
+    password: atob("dWxlYWQxMjMh"),
+    link: atob("aHR0cHM6Ly9tZWdhLm56L2ZpbGUvYUZnMEZUcmEjM1g1alNpd2RKUGx0dE16eEZUd1FfYlFqMHp1Q2M4SGNPOFdSczJIRkN3RQ==")
+  },
+  devcpp: {
+    name: "Dev C++",
+    password: atob("ZGV2MjAyNCE="),
+    link: atob("aHR0cHM6Ly9tZWdhLm56L2ZpbGUvN1VaRjBCQUIja1pqQ1VnNG1JM2lKZjJRRFZjSFdIbkVUdENIdElJbVFHMFkwd0hSUk1MVQ==")
+  },
+  emu8086: {
+    name: "Emu8086",
+    password: atob("ZW11ODA4NmtleSE="),
+    link: atob("aHR0cHM6Ly9tZWdhLm56L2ZpbGUvcmNoMm5DS0kjd0NSRFRKRjJuR29GbVNUOHpSOGh3T0toa2NtMWdqU3pudndKSGVkMEdDWQ==")
+  },
+  jupyter: {
+    name: "Jupyter",
+    password: atob("anVweXRlcmFpIQ=="),
+    link: atob("aHR0cHM6Ly9tZWdhLm56L2ZpbGUvRHU1MTBKaFkjTXR5Ym5oZ3FiY1NYUDVmSnpVTEQxaGdQYXI1T3BCOGJ3eVh3R3JFUDFxOA==")
+  },
+  cedarlogic: {
+    name: "Cedar Logic",
+    password: atob("Y2VkYXJsb2dpYyE="),
+    link: atob("aHR0cHM6Ly9leGFtcGxlLmNvbS9jZWRhcmxvZ2ljX2Rvd25sb2Fk")
+  },
+  vscode: {
+    name: "Visual Studio Code",
+    password: atob("dnNjb2RlMjAyNCE="),
+    link: atob("aHR0cHM6Ly9tZWdhLm56L2ZpbGUvckJvU1FZeEIjemJaQkpITHk4TURYZHpMMDdlSjVLNFF6Unk3OE5HZFh4bmpPeE1uWVJtcw==")
+  },
+  cisco: {
+    name: "Cisco Packet Tracer",
+    password: atob("Y2lzY28yMDI1IQ=="),
+    link: atob("aHR0cHM6Ly9tZWdhLm56L2ZpbGUvN3poWDFENUwjdTQ2aTVxOFFEWUFXT3pETHg5emh5NGpmb2lzRVJNUU9aa0JoUGlFUDREZw==")
+  }
+};
+
+    const params = new URLSearchParams(window.location.search);
+    const appKey = params.get("app");
+    const app = apps[appKey];
+
+    if (!app) {
+      document.body.innerHTML = "<h2>❌ البرنامج غير موجود أو الرابط خاطئ.</h2>";
+    } else {
+      document.getElementById("programTitle").innerText = `🔐 ${app.name}`;
+    }
+
+    function checkPassword() {
+      const input = document.getElementById("passwordInput").value;
+      if (input === app.password) {
+        window.location.href = app.link;
+      } else {
+        document.getElementById("errorMsg").innerText = "كلمة المرور غير صحيحة!";
+      }
+    }
+  </script>
+</body>
+</html>

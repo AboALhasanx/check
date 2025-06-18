@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>📂 اختر البرنامج</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f0f0f0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      color: #333;
+    }
+    .container {
+      background-color: #ffffff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.08);
+      text-align: center;
+      max-width: 700px;
+      width: 95%;
+    }
+    h2 {
+      font-size: 22px;
+      margin-bottom: 25px;
+    }
+    .app-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+      gap: 20px;
+    }
+    .app-grid figure {
+      margin: 0;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+    .app-grid img {
+      width: 80px;
+      height: 80px;
+      object-fit: contain;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+      border-radius: 10px;
+    }
+    .app-grid img:hover {
+      transform: scale(1.1);
+    }
+    .app-grid figcaption {
+      margin-top: 8px;
+      font-size: 14px;
+      color: #444;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>📥 اختر البرنامج للتحميل</h2>
+    <div class="app-grid">
+      <a href="download.html?app=matlab">
+        <figure>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/2/21/Matlab_Logo.png" alt="Matlab" />
+          <figcaption>Matlab</figcaption>
+        </figure>
+      </a>
+      <a href="download.html?app=vs2010">
+        <figure>
+          <img src="https://images.dwncdn.net/images/t_app-icon-l/p/d4c5804d-d02b-4385-9fb6-8a8c25d52c4d/2073296683/2383_4-75450998-imgingest-3961646527974304281.png" alt="Visual Studio 2010" />
+          <figcaption>Visual Studio 2010</figcaption>
+        </figure>
+      </a>
+      <a href="download.html?app=ulead">
+        <figure>
+          <img src="https://i.ibb.co/3mzbhW7K/image.png" alt="Ulead VideoStudio" />
+          <figcaption>Ulead VideoStudio</figcaption>
+        </figure>
+      </a>
+      <a href="download.html?app=devcpp">
+        <figure>
+          <img src="https://i.ibb.co/RFv1zcd/image.png" alt="Dev C++" />
+          <figcaption>Dev C++</figcaption>
+        </figure>
+      </a>
+      <a href="download.html?app=emu8086">
+        <figure>
+          <img src="https://i.ibb.co/XkbNytNM/image.png" alt="Emu8086" />
+          <figcaption>Emu8086</figcaption>
+        </figure>
+      </a>
+      <a href="download.html?app=jupyter">
+        <figure>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Jupyter_logo.svg/1200px-Jupyter_logo.svg.png" alt="Jupyter" />
+          <figcaption>Jupyter</figcaption>
+        </figure>
+      </a>
+      <a href="download.html?app=vscode">
+        <figure>
+          <img src="https://img.icons8.com/color/96/visual-studio-code-2019.png" alt="Visual Studio Code" />
+          <figcaption>Visual Studio Code</figcaption>
+        </figure>
+      </a>
+      <a href="download.html?app=cisco">
+        <figure>
+          <img src="https://i.ibb.co/8LXHyW6Y/image.png" alt="Cisco Packet Tracer" />
+          <figcaption>Cisco Packet Tracer</figcaption>
+        </figure>
+      </a>
+    </div>
+  </div>
+</body>
+</html>
