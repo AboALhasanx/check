@@ -1,10 +1,18 @@
 <!DOCTYPE html>
 <html lang="ar">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>📂 اختر البرنامج</title>
   <style>
+    figcaption{
+      display: inline-block;
+      font-size: 14px;
+      color: #980000;
+      font-weight: 600;
+      text-decoration: none;
+    }
     body {
       font-family: 'Segoe UI', sans-serif;
       background-color: #f0f0f0;
@@ -15,6 +23,7 @@
       margin: 0;
       color: #333;
     }
+
     .container {
       background-color: #ffffff;
       padding: 30px;
@@ -24,20 +33,28 @@
       max-width: 700px;
       width: 95%;
     }
+
     h2 {
       font-size: 22px;
       margin-bottom: 25px;
     }
+
     .app-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
       gap: 20px;
     }
+
     .app-grid figure {
       margin: 0;
       text-align: center;
       transition: all 0.3s ease;
+      border: #33333387 solid 1px;
+      border-radius: 10px;
+      padding: 10px;
+      height: 150px;
     }
+
     .app-grid img {
       width: 80px;
       height: 80px;
@@ -46,9 +63,11 @@
       transition: transform 0.2s ease;
       border-radius: 10px;
     }
+
     .app-grid img:hover {
       transform: scale(1.1);
     }
+
     .app-grid figcaption {
       margin-top: 8px;
       font-size: 14px;
@@ -56,25 +75,26 @@
     }
   </style>
 </head>
+
 <body>
   <div class="container">
-    <h2>📥 اختر البرنامج للتحميل</h2>
+    <h2> اختر البرنامج للتحميل</h2>
     <div class="app-grid">
       <a href="download.html?app=matlab">
         <figure>
-          <img src="https://upload.wikimedia.org/wikipedia/commons/2/21/Matlab_Logo.png" alt="Matlab" />
+          <img src="https://i.ibb.co/ZR81vc9x/image.png" alt="Matlab" />
           <figcaption>Matlab</figcaption>
         </figure>
       </a>
       <a href="download.html?app=vs2010">
         <figure>
-          <img src="https://images.dwncdn.net/images/t_app-icon-l/p/d4c5804d-d02b-4385-9fb6-8a8c25d52c4d/2073296683/2383_4-75450998-imgingest-3961646527974304281.png" alt="Visual Studio 2010" />
+          <img src="https://i.ibb.co/Xr1XsWdc/image.png" alt="Visual Studio 2010" />
           <figcaption>Visual Studio 2010</figcaption>
         </figure>
       </a>
       <a href="download.html?app=ulead">
         <figure>
-          <img src="https://i.ibb.co/3mzbhW7K/image.png" alt="Ulead VideoStudio" />
+          <img src="https://i.ibb.co/21MTLgMx/image.png" alt="Ulead VideoStudio" />
           <figcaption>Ulead VideoStudio</figcaption>
         </figure>
       </a>
@@ -90,25 +110,28 @@
           <figcaption>Emu8086</figcaption>
         </figure>
       </a>
-      <a href="download.html?app=jupyter">
-        <figure>
-          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Jupyter_logo.svg/1200px-Jupyter_logo.svg.png" alt="Jupyter" />
-          <figcaption>Jupyter</figcaption>
-        </figure>
-      </a>
-      <a href="download.html?app=vscode">
-        <figure>
-          <img src="https://img.icons8.com/color/96/visual-studio-code-2019.png" alt="Visual Studio Code" />
-          <figcaption>Visual Studio Code</figcaption>
-        </figure>
-      </a>
       <a href="download.html?app=cisco">
         <figure>
           <img src="https://i.ibb.co/8LXHyW6Y/image.png" alt="Cisco Packet Tracer" />
           <figcaption>Cisco Packet Tracer</figcaption>
         </figure>
       </a>
+            <a href="download.html?app=vscode">
+        <figure>
+          <img src="https://img.icons8.com/color/96/visual-studio-code-2019.png" alt="Visual Studio Code" />
+          <figcaption>Visual Studio Code</figcaption>
+        </figure>
+      </a>
+      <a href="download.html?app=jupyter">
+        <figure>
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Jupyter_logo.svg/1200px-Jupyter_logo.svg.png"
+            alt="Jupyter" />
+          <figcaption>Jupyter</figcaption>
+        </figure>
+      </a>
     </div>
   </div>
 </body>
+
 </html>
