@@ -1,136 +1,228 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="ar" dir="rtl">
 
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>📂 اختر البرنامج</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>📦 برامج الطلاب</title>
   <style>
-    figcaption{
-      display: inline-block;
-      font-size: 14px;
-      color: #980000;
-      font-weight: 600;
-      text-decoration: none;
+    * {
+      -webkit-tap-highlight-color: transparent;
+      outline: none;
     }
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #f0f0f0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
+
+    a,
+    button,
+    input {
+      -webkit-tap-highlight-color: transparent;
+      outline: none;
+    }
+
+    a:focus,
+    button:focus,
+    input:focus {
+      outline: none;
+    }
+
+    :root {
+      --primary: #00D9A0;
+      --primary-dark: #00B588;
+      --secondary: #5F6368;
+      --bg: #F5F7FA;
+      --card: #FFFFFF;
+      --text: #1F2937;
+      --text-muted: #6B7280;
+      --border: #E5E7EB;
+      --shadow: 0 4px 20px rgba(0, 217, 160, 0.15);
+      --hover-shadow: 0 8px 30px rgba(0, 217, 160, 0.25);
+    }
+
+    * {
+      box-sizing: border-box;
       margin: 0;
-      color: #333;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      padding: 40px 20px;
     }
 
     .container {
-      background-color: #ffffff;
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.08);
+      width: 100%;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    header {
       text-align: center;
-      max-width: 700px;
-      width: 95%;
+      margin-bottom: 50px;
+      animation: fadeIn 0.6s ease;
     }
 
-    h2 {
-      font-size: 22px;
-      margin-bottom: 25px;
+    h1 {
+      font-size: clamp(28px, 4vw, 38px);
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 12px;
+      letter-spacing: -0.5px;
     }
 
-    .app-grid {
+    .subtitle {
+      font-size: clamp(15px, 2vw, 17px);
+      color: var(--text-muted);
+      font-weight: 400;
+    }
+
+    .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 24px;
+      animation: slideUp 0.7s ease;
     }
 
-    .app-grid figure {
-      margin: 0;
+    .app-card {
+      background: var(--card);
+      border-radius: 20px;
+      padding: 28px 20px;
       text-align: center;
-      transition: all 0.3s ease;
-      border: #33333387 solid 1px;
-      border-radius: 10px;
-      padding: 10px;
-      height: 150px;
-    }
-
-    .app-grid img {
-      width: 80px;
-      height: 80px;
-      object-fit: contain;
+      text-decoration: none;
+      color: var(--text);
+      box-shadow: var(--shadow);
+      border: 2px solid transparent;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
       cursor: pointer;
-      transition: transform 0.2s ease;
-      border-radius: 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 18px;
+      position: relative;
+      overflow: hidden;
     }
 
-    .app-grid img:hover {
-      transform: scale(1.1);
+
+    .app-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--hover-shadow);
+      border-color: var(--primary);
     }
 
-    .app-grid figcaption {
-      margin-top: 8px;
+    .app-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .app-icon {
+      width: 76px;
+      height: 76px;
+      object-fit: contain;
+      border-radius: 14px;
+      padding: 10px;
+      background: linear-gradient(135deg, rgba(0, 217, 160, 0.08), rgba(0, 181, 136, 0.08));
+      filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.08));
+    }
+
+    .app-name {
+      font-size: 15.5px;
+      font-weight: 600;
+      color: var(--text);
+      line-height: 1.4;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 50px;
+      color: var(--text-muted);
       font-size: 14px;
-      color: #444;
+      animation: fadeIn 1s ease;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes slideUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
   </style>
 </head>
 
 <body>
   <div class="container">
-    <h2> اختر البرنامج للتحميل</h2>
-    <div class="app-grid">
-      <a href="download.html?app=matlab">
-        <figure>
-          <img src="https://i.ibb.co/ZR81vc9x/image.png" alt="Matlab" />
-          <figcaption>Matlab</figcaption>
-        </figure>
+    <header>
+      <h1><img src="https://i.postimg.cc/T2S1N5hr/image.png" alt="icon"
+          style="height: 1.4em; vertical-align: middle; border-radius: 50%;"> مكتبة برامج الطلاب</h1>
+
+      <p class="subtitle">اختر البرنامج الذي تحتاجه للتحميل</p>
+    </header>
+
+    <div class="grid">
+      <a href="verify.html?app=matlab" class="app-card">
+        <img src="https://i.ibb.co/ZR81vc9x/image.png" alt="Matlab" class="app-icon" />
+        <span class="app-name">Matlab</span>
       </a>
-      <a href="download.html?app=vs2010">
-        <figure>
-          <img src="https://i.ibb.co/Xr1XsWdc/image.png" alt="Visual Studio 2010" />
-          <figcaption>Visual Studio 2010</figcaption>
-        </figure>
+
+      <a href="verify.html?app=vs2010" class="app-card">
+        <img src="https://i.ibb.co/Xr1XsWdc/image.png" alt="Visual Studio 2010" class="app-icon" />
+        <span class="app-name">Visual Studio 2010</span>
       </a>
-      <a href="download.html?app=ulead">
-        <figure>
-          <img src="https://i.ibb.co/21MTLgMx/image.png" alt="Ulead VideoStudio" />
-          <figcaption>Ulead VideoStudio</figcaption>
-        </figure>
+
+      <a href="verify.html?app=ulead" class="app-card">
+        <img src="https://i.ibb.co/21MTLgMx/image.png" alt="Ulead VideoStudio" class="app-icon" />
+        <span class="app-name">Ulead VideoStudio</span>
       </a>
-      <a href="download.html?app=devcpp">
-        <figure>
-          <img src="https://i.ibb.co/RFv1zcd/image.png" alt="Dev C++" />
-          <figcaption>Dev C++</figcaption>
-        </figure>
+
+      <a href="verify.html?app=devcpp" class="app-card">
+        <img src="https://i.ibb.co/RFv1zcd/image.png" alt="Dev C++" class="app-icon" />
+        <span class="app-name">Dev C++</span>
       </a>
-      <a href="download.html?app=emu8086">
-        <figure>
-          <img src="https://i.ibb.co/XkbNytNM/image.png" alt="Emu8086" />
-          <figcaption>Emu8086</figcaption>
-        </figure>
+
+      <a href="verify.html?app=emu8086" class="app-card">
+        <img src="https://i.ibb.co/XkbNytNM/image.png" alt="Emu8086" class="app-icon" />
+        <span class="app-name">Emu8086</span>
       </a>
-      <a href="download.html?app=cisco">
-        <figure>
-          <img src="https://i.ibb.co/8LXHyW6Y/image.png" alt="Cisco Packet Tracer" />
-          <figcaption>Cisco Packet Tracer</figcaption>
-        </figure>
+
+      <a href="verify.html?app=cisco" class="app-card">
+        <img src="https://i.ibb.co/8LXHyW6Y/image.png" alt="Cisco Packet Tracer" class="app-icon" />
+        <span class="app-name">Cisco Packet Tracer</span>
       </a>
-            <a href="download.html?app=vscode">
-        <figure>
-          <img src="https://img.icons8.com/color/96/visual-studio-code-2019.png" alt="Visual Studio Code" />
-          <figcaption>Visual Studio Code</figcaption>
-        </figure>
+
+      <a href="verify.html?app=vscode" class="app-card">
+        <img src="https://img.icons8.com/color/96/visual-studio-code-2019.png" alt="Visual Studio Code"
+          class="app-icon" />
+        <span class="app-name">Visual Studio Code</span>
       </a>
-      <a href="download.html?app=jupyter">
-        <figure>
-          <img
-            src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Jupyter_logo.svg/1200px-Jupyter_logo.svg.png"
-            alt="Jupyter" />
-          <figcaption>Jupyter</figcaption>
-        </figure>
+
+      <a href="verify.html?app=jupyter" class="app-card">
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Jupyter_logo.svg/1200px-Jupyter_logo.svg.png"
+          alt="Jupyter" class="app-icon" />
+        <span class="app-name">Jupyter</span>
       </a>
     </div>
+
+    <footer>
+      <br>
+      <div style="font-family: Calibri;">
+        Made by <span style="color: var(--primary)">@ab0_alhasan</span>
+      </div>
+    </footer>
   </div>
 </body>
 
