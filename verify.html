@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>🔐 التحقق من كلمة المرور</title>
-    <link rel="icon" type="image/png" href="https://i.postimg.cc/T2S1N5hr/image.png">
+  <link rel="icon" type="image/png" href="https://i.postimg.cc/T2S1N5hr/image.png">
   <style>
     * {
       -webkit-tap-highlight-color: transparent;
@@ -278,12 +278,11 @@
     <div class="hint">
       💡 لا تملك كلمة المرور؟
       <a href="https://t.me/ab0_alhasan" target="_blank"> اضغط هنا </a>
-      وتواصل معي للحصول عليها  
+      وتواصل معي للحصول عليها
     </div>
   </div>
 
   <script>
-    // كلمات المرور المدمجة (نسخة احتياطية)
     const localPasswords = {
       matlab: "MAT2024",
       vs2010: "VS2010",
@@ -296,7 +295,6 @@
       office19: "OFFICE19"
     };
 
-    // أسماء البرامج
     const appNames = {
       matlab: "Matlab",
       vs2010: "Visual Studio 2010",
@@ -309,7 +307,6 @@
       office19: "Office 2019"
     };
 
-    // صور البرامج
     const appIcons = {
       matlab: "https://i.ibb.co/ZR81vc9x/image.png",
       vs2010: "https://i.ibb.co/Xr1XsWdc/image.png",
@@ -322,24 +319,22 @@
       office19: "https://iconape.com/wp-content/png_logo_vector/microsoft-office-icon-2019.png"
     };
 
-    // روابط التحميل (Base64)
+    // الروابط بدون ترميز
     const downloadLinks = {
-      matlab: "aHR0cHM6Ly9tZWdhLm56L2ZpbGUvNlVCaUdSemEjS1NtenloY3lzRUFYaEYwbU04RlFiZG4wWlJONnJzMXlQX29jYXJNeERDaw==",
-      vs2010: "aHR0cHM6Ly9tZWdhLm56L2ZpbGUvT1VoMXlDU0kjSld6M3RlSUNJMjF5NS1lTnBoTFBpdnJ4STljVGppb3pyWWhJQ3M5NXlRTQ==",
-      ulead: "aHR0cHM6Ly9tZWdhLm56L2ZpbGUvYUZnMEZUcmEjM1g1alNpd2RKUGx0dE16eEZUd1FfYlFqMHp1Q2M4SGNPOFdSczJIRkN3RQ==",
-      devcpp: "aHR0cHM6Ly9tZWdhLm56L2ZpbGUvN1VaRjBCQUIja1pqQ1VnNG1JM2lKZjJRRFZjSFdIbkVUdENIdElJbVFHMFkwd0hSUk1MVQ==",
-      emu8086: "aHR0cHM6Ly9tZWdhLm56L2ZpbGUvcmNoMm5DS0kjd0NSRFRKRjJuR29GbVNUOHpSOGh3T0toa2NtMWdqU3pudndKSGVkMEdDWQ==",
-      jupyter: "aHR0cHM6Ly9tZWdhLm56L2ZpbGUvRHU1MTBKaFkjTXR5Ym5oZ3FiY1NYUDVmSnpVTEQxaGdQYXI1T3BCOGJ3eVh3R3JFUDFxOA==",
-      vscode: "aHR0cHM6Ly9tZWdhLm56L2ZpbGUvckJvU1FZeEIjemJaQkpITHk4TURYZHpMMDdlSjVLNFF6Unk3OE5HZFh4bmpPeE1uWVJtcw==",
-      cisco: "aHR0cHM6Ly9tZWdhLm56L2ZpbGUvN3poWDFENUwjdTQ2aTVxOFFEWUFXT3pETHg5emh5NGpmb2lzRVJNUU9aa0JoUGlFUDREZw==",
-      office19: "aHR0cHM6Ly9tZWdhLm56L2ZpbGUvejNaU0NUb0EjSE5RREU3aVhfeVdQUGFfVWhyc0piQkpTQmVFdHlnd1BKWjRleWg0TmVTSQ=="
+      matlab: "https://mega.nz/file/6UBiGRzj#KSmzyhcysEAXhF0mM8FQbdn0ZRN6rs1yP_ocarMxDCk",
+      vs2010: "https://mega.nz/file/OUh1yCSI#JWz3teICI21y5-eNphLPivrxI9cTjiozrYhICs95yQM",
+      ulead: "https://mega.nz/file/aFg0FTrA#3X5jSiwdJPlttMzxFTwQ_bQj0zuCc8HcO8WRs2HFCwE",
+      devcpp: "https://mega.nz/file/7UZF0BAB#kZqCUg4mI3iJf2QDVcHWHnETtCHtIImQG0Y0wHRRMLU",
+      emu8086: "https://mega.nz/file/rch2nCKI#wCRDTJF2nGoFmST8zR8hwOKhkcM1gjSznvwJHed0GCY",
+      jupyter: "https://mega.nz/file/Du510JhY#MtybnhqqbcSXP5fJzULD1hgPar5OpB8bwyXwGrEP1q8",
+      vscode: "https://mega.nz/file/rBoSQYxB#zbBJBHLy8MDXd zL07eJ5K4QzRy78NGdXxnjOxMnYRms",
+      cisco: "https://mega.nz/file/7zhX1D5L#u46i5q8QDYAWOzDLx9zhy4jfoisERMQOZkBhPiEP4Dg",
+      office19: "https://mega.nz/file/z3ZSCToA#HNQDE7iX_yWPPa_UhrsJbBJSBeEtygwPJZ4eyh4NeSI"
     };
 
-    // استخراج البرنامج من الرابط
     const params = new URLSearchParams(window.location.search);
     const currentApp = params.get('app');
 
-    // عناصر الصفحة
     const appTitle = document.getElementById('appTitle');
     const appIcon = document.getElementById('appIcon');
     const passwordInput = document.getElementById('password');
@@ -347,44 +342,33 @@
     const statusDiv = document.getElementById('status');
     const form = document.getElementById('verifyForm');
 
-    // تحقق من وجود البرنامج
     if (!currentApp || !appNames[currentApp]) {
       showStatus('❌ البرنامج غير موجود أو الرابط خاطئ', 'error');
       submitBtn.disabled = true;
     } else {
-      // عرض معلومات البرنامج
       appTitle.textContent = appNames[currentApp];
       appIcon.src = appIcons[currentApp];
       appIcon.alt = appNames[currentApp];
     }
 
-    // دالة عرض الرسائل
     function showStatus(message, type) {
       statusDiv.textContent = message;
       statusDiv.className = `status ${type} show`;
     }
 
-    // دالة جلب كلمات المرور (مع احتياطي محلي)
     async function getPasswords() {
       try {
-        const response = await fetch('keys.json', {
-          cache: 'no-store',
-          mode: 'no-cors'
-        });
-
+        const response = await fetch('keys.json', { cache: 'no-store', mode: 'no-cors' });
         if (response.ok) {
           const data = await response.json();
           return data;
         }
-      } catch (error) {
+      } catch {
         console.log('استخدام كلمات المرور المحلية');
       }
-
-      // استخدام النسخة الاحتياطية المدمجة
       return localPasswords;
     }
 
-    // دالة التحقق من كلمة المرور
     async function verifyPassword() {
       const inputPassword = passwordInput.value.trim();
 
@@ -397,22 +381,13 @@
       submitBtn.textContent = 'جاري التحقق...';
 
       try {
-        // جلب كلمات المرور
         const passwords = await getPasswords();
         const correctPassword = passwords[currentApp];
 
-        // التحقق
         if (inputPassword === correctPassword) {
           showStatus('✅ تم التحقق بنجاح! جاري التحويل...', 'success');
-
-          // حفظ حالة الفتح
-          const openedApps = JSON.parse(localStorage.getItem('opened_apps') || '{}');
-          openedApps[currentApp] = true;
-          localStorage.setItem('opened_apps', JSON.stringify(openedApps));
-
-          // الانتقال للتحميل
           setTimeout(() => {
-            window.location.href = atob(downloadLinks[currentApp]);
+            window.location.href = downloadLinks[currentApp];
           }, 1000);
         } else {
           showStatus('❌ كلمة المرور غير صحيحة!', 'error');
@@ -420,29 +395,18 @@
           submitBtn.textContent = 'التحقق والانتقال للتحميل';
           passwordInput.focus();
         }
-      } catch (error) {
+      } catch {
         showStatus('⚠️ حدث خطأ غير متوقع', 'error');
         submitBtn.disabled = false;
         submitBtn.textContent = 'التحقق والانتقال للتحميل';
       }
     }
 
-    // ربط الأحداث
     form.addEventListener('submit', verifyPassword);
     submitBtn.addEventListener('click', verifyPassword);
-
-    // Enter للتحقق
-    passwordInput.addEventListener('keypress', (e) => {
-      if (e.key === 'Enter') {
-        verifyPassword();
-      }
-    });
-
-    // تركيز على حقل الإدخال
+    passwordInput.addEventListener('keypress', e => { if (e.key === 'Enter') verifyPassword(); });
     passwordInput.focus();
   </script>
 </body>
 
-
 </html>
-
